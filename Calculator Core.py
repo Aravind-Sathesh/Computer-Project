@@ -1,4 +1,9 @@
-from sympy import *
+try:
+    from sympy import *
+except:
+    import os 
+    os.system('pip install sympy')
+    from sympy import *
 
 def calculator(flag):
     # if flag is a string , it means to take value input from console
