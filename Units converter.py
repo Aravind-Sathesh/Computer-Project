@@ -15,7 +15,7 @@ print ('5. Storage')
 ch2 = int(input ('Enter your choice: '))
 if (ch2==1):
     os. system('CLS')
-    print ('Select the unit you want to convert from: ')
+    print ('From which unit?: ')
     unit_list = list_l
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
@@ -81,7 +81,7 @@ if (ch2==1):
     else:
         print ('Please choose only from provided choice')
     os. system('CLS')
-    print ('Select the unit you want to convert to: ')
+    print ('To which unit?: ')
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
     ch4 = int(input ('Enter your choice: '))
@@ -128,7 +128,7 @@ if (ch2==1):
         print ('Please choose only from provided choice.')
 elif ch2==2:
     os. system('CLS')
-    print ('Select the unit you want to convert from: ')
+    print ('From which unit?: ')
     unit_list = list_m
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
@@ -167,7 +167,7 @@ elif ch2==2:
     else:
         print ('Please choose only from provided choice')
     os. system('CLS')
-    print ('Select the unit you want to convert to: ')
+    print ('To which unit?: ')
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
     ch4 = int(input ('Enter your choice: '))
