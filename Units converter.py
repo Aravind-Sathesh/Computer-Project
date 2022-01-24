@@ -214,7 +214,10 @@ elif ch2==2:
             to_unit=atom_m
     else:
         print ('Please choose only from provided choice')
-os.system('CLS')
+try:
+    os. system('CLS')
+except:
+    pass
 if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)):
     input_val = float(input('Enter value to be converted: '))
     print ('-----------------------------------------------------')
