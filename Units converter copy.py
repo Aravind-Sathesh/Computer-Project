@@ -128,4 +128,5 @@ if (ch2==1):
     print ('From:', length_list[ch3-1])
     print ('To:', length_list[ch4-1])
     output_val = input_val*to_meter/to_unit
-    print (input_val, length_list[ch3-1], 'is', output_val, length_list[ch4-1], end='.')
+    print (input_val, length_list[ch3-1].lower(), 'is', output_val, length_list[ch4-1].lower(), end='.')
+    print ('------------------------------------------------------------------------')

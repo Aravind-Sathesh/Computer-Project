@@ -38,43 +38,43 @@ if (ch2==1):
     if ch3>0 and ch3<=(len(length_list)):
         input_val = float(input('Enter value to be converted: '))
         if ch3==1:
-            input_val*=pico
+            to_meter=pico
         elif ch3==2:
-            input_val*=angs
+            to_meter=angs
         elif ch3==3:
-            input_val*=nano
+            to_meter=nano
         elif ch3==4:
-            input_val*=micr
+            to_meter=micr
         elif ch3==5:
-            input_val*=mill
+            to_meter=mill
         elif ch3==6:
-            input_val*=cent
+            to_meter=cent
         elif ch3==7:
-            input_val*=deci
+            to_meter=deci
         elif ch3==8:
-            input_val*=metr
+            to_meter=metr
         elif ch3==9:
-            input_val*=deca
+            to_meter=deca
         elif ch3==10:
-            input_val*=hect
+            to_meter=hect
         elif ch3==11:
-            input_val*=kilo
+            to_meter=kilo
         elif ch3==12:
-            input_val*=mega
+            to_meter=mega
         elif ch3==13:
-            input_val*=giga
+            to_meter=giga
         elif ch3==14:
-            input_val*=foot
+            to_meter=foot
         elif ch3==15:
-            input_val*=yard
+            to_meter=yard
         elif ch3==16:
-            input_val*=inch
+            to_meter=inch
         elif ch3==17:
-            input_val*=pars
+            to_meter=pars
         elif ch3==18:
-            input_val*=ligh
+            to_meter=ligh
         elif ch3==19:
-            input_val*=astr
+            to_meter=astr
     else:
         print ('Please choose only from provided choice')
     os. system('CLS')
@@ -83,64 +83,50 @@ if (ch2==1):
     for i in range (len(length_list)):
         print (i+1, '. ', length_list[i], sep = '')
     ch4 = int(input ('Enter your choice: '))
-    pico = 1/(10**-12)
-    angs = 1/(10**-10)
-    nano = 1/(10**-9)
-    micr = 1/(10**-6)
-    mill = 1/(10**-3)
-    cent = 1/(10**-2)
-    deci = 1/(10**-1)
-    metr = 1/(10**0)
-    deca = 1/(10**1)
-    hect = 1/(10**2)
-    kilo = 1/(10**3)
-    mega = 1/(10**6)
-    giga = 1/(10**9)
-    foot = 1/(0.3048)
-    yard = 1/(0.9144)
-    inch = 1/(0.0254)
-    pars = 1/(30857 * (10**12))
-    ligh = 1/(946 * (10**13))
-    astr = 1/(1496 * (10**8))
     if ch4>0 and ch4<=(len(length_list)):
         if ch4==1:
-            input_val*=pico
+            to_unit=pico
         elif ch4==2:
-            input_val*=angs
+            to_unit=angs
         elif ch4==3:
-            input_val*=nano
+            to_unit=nano
         elif ch4==4:
-            input_val*=micr
+            to_unit=micr
         elif ch4==5:
-            input_val*=mill
+            to_unit=mill
         elif ch4==6:
-            input_val*=cent
+            to_unit=cent
         elif ch4==7:
-            input_val*=deci
+            to_unit=deci
         elif ch4==8:
-            input_val*=metr
+            to_unit=metr
         elif ch4==9:
-            input_val*=deca
+            to_unit=deca
         elif ch4==10:
-            input_val*=hect
+            to_unit=hect
         elif ch4==11:
-            input_val*=kilo
+            to_unit=kilo
         elif ch4==12:
-            input_val*=mega
+            to_unit=mega
         elif ch4==13:
-            input_val*=giga
+            to_unit=giga
         elif ch4==14:
-            input_val*=foot
+            to_unit=foot
         elif ch4==15:
-            input_val*=yard
+            to_unit=yard
         elif ch4==16:
-            input_val*=inch
+            to_unit=inch
         elif ch4==17:
-            input_val*=pars
+            to_unit=pars
         elif ch4==18:
-            input_val*=ligh
+            to_unit=ligh
         elif ch4==19:
-            input_val*=astr
+            to_unit=astr
     else:
         print ('Please choose only from provided choice.')
-    print ('Converted value:', input_val)
+    os.system('CLS')
+    print ('From:', length_list[ch3-1])
+    print ('To:', length_list[ch4-1])
+    output_val = input_val*to_meter/to_unit
+    print (input_val, length_list[ch3-1].lower(), 'is', output_val, length_list[ch4-1].lower(), end='.')
+    print ('------------------------------------------------------------------------')
