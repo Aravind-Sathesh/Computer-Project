@@ -4,6 +4,7 @@ try:
     os. system('CLS')
 except:
         pass
+main_list = ['Length','Mass','Temperature','Volume','Storage','Energy']
 list_l = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
 list_m = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
 list_t = ['Celsius','Fahrenheit','Kelvin']
@@ -11,13 +12,9 @@ list_v = []
 list_s = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
 list_e = ['Joule','Erg','Calorie','Kilocalorie','']
 print ('Units convertor:')
-print ('Chhose the standard of units you want to convert: ')
-print ('1. Length')
-print ('2. Mass')
-print ('3. Temperature')
-print ('4. Volume')
-print ('5. Storage')
-print ('6. Energy')
+print ('Choose the standard of units you want to convert: ')
+for i in range (len(main_list)):
+        print (i+1, '. ', main_list[i], sep = '')
 ch2 = int(input ('Enter your choice: '))
 if (ch2==1):
     print ('-----------------------------------------------------')
