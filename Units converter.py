@@ -6,16 +6,18 @@ except:
         pass
 list_l = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
 list_m = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
-temp_list = ['Celsius','Fahrenheit','Kelvin']
-vol_list = []
-stg_list = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
+list_t = ['Celsius','Fahrenheit','Kelvin']
+list_v = []
+list_s = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
+list_e = ['Joule','Erg','Calorie','Kilocalorie','']
 print ('Units convertor:')
-print ('Enter the standard of units you want to convert: ')
+print ('Chhose the standard of units you want to convert: ')
 print ('1. Length')
 print ('2. Mass')
 print ('3. Temperature')
 print ('4. Volume')
 print ('5. Storage')
+print ('6. Energy')
 ch2 = int(input ('Enter your choice: '))
 if (ch2==1):
     print ('-----------------------------------------------------')
@@ -87,7 +89,7 @@ if (ch2==1):
         elif ch3==19:
             from_unit=astr_l
     else:
-        print ('Please choose only from provided choice')
+        print ('Please choose only from provided options.')
     print ('-----------------------------------------------------')
     try:
         os. system('CLS')
@@ -137,7 +139,7 @@ if (ch2==1):
         elif ch4==19:
             to_unit=astr_l
     else:
-        print ('Please choose only from provided choice.')
+        print ('Please choose only from provided options.')
 elif ch2==2:
     print ('-----------------------------------------------------')
     try:
@@ -181,7 +183,7 @@ elif ch2==2:
         elif ch3==10:
             from_unit=atom_m
     else:
-        print ('Please choose only from provided choice')
+        print ('Please choose only from provided options.')
     print ('-----------------------------------------------------')
     try:
         os. system('CLS')
@@ -213,7 +215,7 @@ elif ch2==2:
         elif ch4==10:
             to_unit=atom_m
     else:
-        print ('Please choose only from provided choice')
+        print ('Please choose only from provided options.')
 try:
     os. system('CLS')
 except:
