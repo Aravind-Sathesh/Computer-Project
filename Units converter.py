@@ -1,5 +1,9 @@
 import os
-os. system('CLS')
+print ('-----------------------------------------------------')
+try:
+    os. system('CLS')
+except:
+        pass
 list_l = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
 list_m = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
 temp_list = ['Celsius','Fahrenheit','Kelvin']
@@ -14,7 +18,11 @@ print ('4. Volume')
 print ('5. Storage')
 ch2 = int(input ('Enter your choice: '))
 if (ch2==1):
-    os. system('CLS')
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
     print ('From which unit?: ')
     unit_list = list_l
     for i in range (len(unit_list)):
@@ -80,7 +88,11 @@ if (ch2==1):
             from_unit=astr_l
     else:
         print ('Please choose only from provided choice')
-    os. system('CLS')
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
     print ('To which unit?: ')
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
@@ -127,7 +139,11 @@ if (ch2==1):
     else:
         print ('Please choose only from provided choice.')
 elif ch2==2:
-    os. system('CLS')
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
     print ('From which unit?: ')
     unit_list = list_m
     for i in range (len(unit_list)):
@@ -166,7 +182,11 @@ elif ch2==2:
             from_unit=atom_m
     else:
         print ('Please choose only from provided choice')
-    os. system('CLS')
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
     print ('To which unit?: ')
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
@@ -197,9 +217,9 @@ elif ch2==2:
 os.system('CLS')
 if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)):
     input_val = float(input('Enter value to be converted: '))
-print ('-----------------------------------------------------')
-print ('From:', unit_list[ch3-1])
-print ('To:', unit_list[ch4-1])
-output_val = (input_val*from_unit)/to_unit
-print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
-print ('-----------------------------------------------------')
+    print ('-----------------------------------------------------')
+    print ('From:', unit_list[ch3-1])
+    print ('To:', unit_list[ch4-1])
+    output_val = (input_val*from_unit)/to_unit
+    print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
+    print ('-----------------------------------------------------')
