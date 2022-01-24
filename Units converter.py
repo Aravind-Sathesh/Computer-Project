@@ -12,7 +12,7 @@ if (ch2==1):
     os. system('CLS')
     print('Selected standard: Length')
     print ('Select the unit you want to convert from: ')
-    length_list = ['Picometre', 'Angstrom', 'Nanometer', 'Micrometer','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
+    length_list = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
     for i in range (len(length_list)):
         print (i+1, '. ', length_list[i], sep = '')
     ch3 = int(input ('Enter your choice: '))
@@ -38,48 +38,48 @@ if (ch2==1):
     if ch3>0 and ch3<=(len(length_list)):
         input_val = float(input('Enter value to be converted: '))
         if ch3==1:
-            to_meter=pico
+            to_metre=pico
         elif ch3==2:
-            to_meter=angs
+            to_metre=angs
         elif ch3==3:
-            to_meter=nano
+            to_metre=nano
         elif ch3==4:
-            to_meter=micr
+            to_metre=micr
         elif ch3==5:
-            to_meter=mill
+            to_metre=mill
         elif ch3==6:
-            to_meter=cent
+            to_metre=cent
         elif ch3==7:
-            to_meter=deci
+            to_metre=deci
         elif ch3==8:
-            to_meter=metr
+            to_metre=metr
         elif ch3==9:
-            to_meter=deca
+            to_metre=deca
         elif ch3==10:
-            to_meter=hect
+            to_metre=hect
         elif ch3==11:
-            to_meter=kilo
+            to_metre=kilo
         elif ch3==12:
-            to_meter=mega
+            to_metre=mega
         elif ch3==13:
-            to_meter=giga
+            to_metre=giga
         elif ch3==14:
-            to_meter=foot
+            to_metre=foot
         elif ch3==15:
-            to_meter=yard
+            to_metre=yard
         elif ch3==16:
-            to_meter=inch
+            to_metre=inch
         elif ch3==17:
-            to_meter=pars
+            to_metre=pars
         elif ch3==18:
-            to_meter=ligh
+            to_metre=ligh
         elif ch3==19:
-            to_meter=astr
+            to_metre=astr
     else:
         print ('Please choose only from provided choice')
     os. system('CLS')
     print ('Select the unit you want to convert to: ')
-    length_list = ['Picometre', 'Angstrom', 'Nanometer', 'Micrometer','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
+    length_list = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
     for i in range (len(length_list)):
         print (i+1, '. ', length_list[i], sep = '')
     ch4 = int(input ('Enter your choice: '))
@@ -127,6 +127,6 @@ if (ch2==1):
     os.system('CLS')
     print ('From:', length_list[ch3-1])
     print ('To:', length_list[ch4-1])
-    output_val = input_val*to_meter/to_unit
+    output_val = input_val*to_metre/to_unit
     print (input_val, length_list[ch3-1].lower(), 'is', output_val, length_list[ch4-1].lower(), end='.')
     print ('------------------------------------------------------------------------')
