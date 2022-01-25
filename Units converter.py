@@ -275,6 +275,81 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
             to_unit=barrel
     else:
         print ('Please choose only from provided options.')
+elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
+    clear()
+    print ('From which unit?: ')
+    unit_list = list_storage
+    ch3 = choose (unit_list)
+
+    # Units in terms of standard unit (SI):
+    bit = 1 # Standard unit
+    nibble = 4
+    byte = 8
+    kilobyte = byte*1024
+    megabyte = kilobyte*1024
+    gigabyte = megabyte*1024
+    terabyte = gigabyte*1024
+    petabyte = terabyte*1024
+    exabyte = petabyte*1024
+    zettabyte = exabyte*1024
+    yottabyte = zettabyte*1024
+
+    # Choosing the from_unit for the value entered by the user:
+    if ch3>0 and ch3<=(len(unit_list)):
+        if ch3==1:
+            from_unit=bit
+        elif ch3==2:
+            from_unit=nibble
+        elif ch3==3:
+            from_unit=byte
+        elif ch3==4:
+            from_unit=kilobyte
+        elif ch3==5:
+            from_unit=megabyte
+        elif ch3==6:
+            from_unit=gigabyte
+        elif ch3==7:
+            from_unit=terabyte
+        elif ch3==8:
+            from_unit=petabyte
+        elif ch3==9:
+            from_unit=exabyte
+        elif ch3==10:
+            from_unit=zettabyte
+        elif ch3==11:
+            from_unit=yottabyte
+    else:
+        print ('Please choose only from provided options.')
+    clear()
+    print ('To which unit?: ')
+    ch4 = choose (unit_list)
+
+    # Storing the to_unit as the unit to convert the user's value to:
+    if ch4>0 and ch4<=(len(unit_list)):
+        if ch4==1:
+            to_unit=bit
+        elif ch4==2:
+            to_unit=nibble
+        elif ch4==3:
+            to_unit=byte
+        elif ch4==4:
+            to_unit=kilobyte
+        elif ch4==5:
+            to_unit=megabyte
+        elif ch4==6:
+            to_unit=gigabyte
+        elif ch4==7:
+            to_unit=terabyte
+        elif ch4==8:
+            to_unit=petabyte
+        elif ch4==9:
+            to_unit=exabyte
+        elif ch4==10:
+            to_unit=zettabyte
+        elif ch4==11:
+            to_unit=yottabyte
+    else:
+        print ('Please choose only from provided options.')
 clear()
 if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)): # To display all data obtained from the user
     input_val = float(input('Enter value to be converted: '))
