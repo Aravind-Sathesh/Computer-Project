@@ -8,11 +8,10 @@ def choose (unit_list):
 
 # Function to clear the output screen on Windows devices, but display a line of hyphens on non-Windows devices:
 def clear():
-    print ('-----------------------------------------------------')
     try:
         os. system('CLS')
     except:
-        pass
+        print ('-----------------------------------------------------')
 
 clear()
 ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
