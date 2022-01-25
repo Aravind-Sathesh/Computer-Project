@@ -1,90 +1,94 @@
-import os
+import os # Importing the package for system clearscreen function
+# The following lines of code clear the output screen on Windows devices, but display a line of hyphens on non-Windows devices
 print ('-----------------------------------------------------')
 try:
     os. system('CLS')
 except:
         pass
+ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
+# Storing the possible standards and units for conversion in lists:
 main_list = ['Length','Mass','Temperature','Volume','Storage','Energy']
-list_l = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
-list_m = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
-list_t = ['Celsius','Fahrenheit','Kelvin']
-list_v = []
-list_s = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
-list_e = ['Joule','Erg','Calorie','Kilocalorie','']
+list_length = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
+list_mass = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
+list_temp = ['Celsius','Fahrenheit','Kelvin']
+list_volume = ['Cubic metre','Cubic decimetre','Cubic centrimetre','Cubic foot','Cubic inch','Pint','Gallon','Barrel']
+list_storage = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
+list_energy = ['Joule','Erg','Calorie','Kilocalorie','']
 print ('Units convertor:')
+# Displaying the options of standards to choose from using a for loop to access elements of main_list
 print ('Choose the standard of units you want to convert: ')
 for i in range (len(main_list)):
-        print (i+1, '. ', main_list[i], sep = '')
+    print (i+1, '. ', main_list[i], sep = '')
 ch2 = int(input ('Enter your choice: '))
-if (ch2==1):
+if ch2==1: #if the user enters 1. Length as standard for unit conversion
     print ('-----------------------------------------------------')
     try:
         os. system('CLS')
     except:
         pass
     print ('From which unit?: ')
-    unit_list = list_l
+    unit_list = list_length
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
     ch3 = int(input ('Enter your choice: '))
-    pico_l = 10**-12
-    angs_l = 10**-10
-    nano_l = 10**-9
-    micr_l = 10**-6
-    mill_l = 10**-3
-    cent_l = 10**-2
-    deci_l = 10**-1
-    metr_l = 10**0
-    deca_l = 10**1
-    hect_l = 10**2
-    kilo_l = 10**3
-    mega_l = 10**6
-    giga_l = 10**9
-    foot_l = 0.3048
-    yard_l = 0.9144
-    inch_l = 0.0254
-    pars_l = 30857 * (10**12)
-    ligh_l = 946 * (10**13)
-    astr_l = 1496 * (10**8)
+    picometre = 10**-12
+    angstrom = 10**-10
+    nanometre = 10**-9
+    micrometre = 10**-6
+    millimetre = 10**-3
+    centimetre = 10**-2
+    deciimetre = 10**-1
+    metre = 10**0
+    decametre = 10**1
+    hectometre = 10**2
+    kilometre = 10**3
+    megametre = 10**6
+    gigametre = 10**9
+    foot = 0.3048
+    yard = 0.9144
+    inch = 0.0254
+    parsec = 30857 * (10**12)
+    light_year = 946 * (10**13)
+    astro_unit = 1496 * (10**8)
     if ch3>0 and ch3<=(len(unit_list)):
         if ch3==1:
-            from_unit=pico_l
+            from_unit=picometre
         elif ch3==2:
-            from_unit=angs_l
+            from_unit=angstrom
         elif ch3==3:
-            from_unit=nano_l
+            from_unit=nanometre
         elif ch3==4:
-            from_unit=micr_l
+            from_unit=micrometre
         elif ch3==5:
-            from_unit=mill_l
+            from_unit=millimetre
         elif ch3==6:
-            from_unit=cent_l
+            from_unit=centimetre
         elif ch3==7:
-            from_unit=deci_l
+            from_unit=deciimetre
         elif ch3==8:
-            from_unit=metr_l
+            from_unit=metre
         elif ch3==9:
-            from_unit=deca_l
+            from_unit=decametre
         elif ch3==10:
-            from_unit=hect_l
+            from_unit=hectometre
         elif ch3==11:
-            from_unit=kilo_l
+            from_unit=kilometre
         elif ch3==12:
-            from_unit=mega_l
+            from_unit=megametre
         elif ch3==13:
-            from_unit=giga_l
+            from_unit=gigametre
         elif ch3==14:
-            from_unit=foot_l
+            from_unit=foot
         elif ch3==15:
-            from_unit=yard_l
+            from_unit=yard
         elif ch3==16:
-            from_unit=inch_l
+            from_unit=inch
         elif ch3==17:
-            from_unit=pars_l
+            from_unit=parsec
         elif ch3==18:
-            from_unit=ligh_l
+            from_unit=light_year
         elif ch3==19:
-            from_unit=astr_l
+            from_unit=astro_unit
     else:
         print ('Please choose only from provided options.')
     print ('-----------------------------------------------------')
@@ -98,87 +102,87 @@ if (ch2==1):
     ch4 = int(input ('Enter your choice: '))
     if ch4>0 and ch4<=(len(unit_list)):
         if ch4==1:
-            to_unit=pico_l
+            to_unit=picometre
         elif ch4==2:
-            to_unit=angs_l
+            to_unit=angstrom
         elif ch4==3:
-            to_unit=nano_l
+            to_unit=nanometre
         elif ch4==4:
-            to_unit=micr_l
+            to_unit=micrometre
         elif ch4==5:
-            to_unit=mill_l
+            to_unit=millimetre
         elif ch4==6:
-            to_unit=cent_l
+            to_unit=centimetre
         elif ch4==7:
-            to_unit=deci_l
+            to_unit=deciimetre
         elif ch4==8:
-            to_unit=metr_l
+            to_unit=metre
         elif ch4==9:
-            to_unit=deca_l
+            to_unit=decametre
         elif ch4==10:
-            to_unit=hect_l
+            to_unit=hectometre
         elif ch4==11:
-            to_unit=kilo_l
+            to_unit=kilometre
         elif ch4==12:
-            to_unit=mega_l
+            to_unit=megametre
         elif ch4==13:
-            to_unit=giga_l
+            to_unit=gigametre
         elif ch4==14:
-            to_unit=foot_l
+            to_unit=foot
         elif ch4==15:
-            to_unit=yard_l
+            to_unit=yard
         elif ch4==16:
-            to_unit=inch_l
+            to_unit=inch
         elif ch4==17:
-            to_unit=pars_l
+            to_unit=parsec
         elif ch4==18:
-            to_unit=ligh_l
+            to_unit=light_year
         elif ch4==19:
-            to_unit=astr_l
+            to_unit=astro_unit
     else:
         print ('Please choose only from provided options.')
-elif ch2==2:
+elif ch2==2: #if the user enters 2. Mass as standard for unit conversion
     print ('-----------------------------------------------------')
     try:
         os. system('CLS')
     except:
         pass
     print ('From which unit?: ')
-    unit_list = list_m
+    unit_list = list_mass
     for i in range (len(unit_list)):
         print (i+1, '. ', unit_list[i], sep = '')
     ch3 = int(input ('Enter your choice: '))
-    micr_m = 10**-6
-    mill_m = 10**-3
-    gram_m = 10**0
-    kilo_m = 10**3
-    metr_m = 10**6
-    tonn_m = 1.016 * (10**6)
-    poun_m = 453.59
-    ounc_m = 28.349
-    cara_m = 0.2
-    atom_m = 1.66 * (10**-24)
+    microgram = 10**-6
+    milligram = 10**-3
+    gram = 10**0
+    kilogram = 10**3
+    metric_ton = 10**6
+    tonne = 1.016 * (10**6)
+    pound = 453.59
+    ounce = 28.349
+    carat = 0.2
+    a_m_u = 1.66 * (10**-24)
     if ch3>0 and ch3<=(len(unit_list)):
         if ch3==1:
-            from_unit=micr_m
+            from_unit=microgram
         elif ch3==2:
-            from_unit=mill_m
+            from_unit=milligram
         elif ch3==3:
-            from_unit=gram_m
+            from_unit=gram
         elif ch3==4:
-            from_unit=kilo_m
+            from_unit=kilogram
         elif ch3==5:
-            from_unit=metr_m
+            from_unit=metric_ton
         elif ch3==6:
-            from_unit=tonn_m
+            from_unit=tonne
         elif ch3==7:
-            from_unit=poun_m
+            from_unit=pound
         elif ch3==8:
-            from_unit=ounc_m
+            from_unit=ounce
         elif ch3==9:
-            from_unit=cara_m
+            from_unit=carat
         elif ch3==10:
-            from_unit=atom_m
+            from_unit=a_m_u
     else:
         print ('Please choose only from provided options.')
     print ('-----------------------------------------------------')
@@ -192,36 +196,102 @@ elif ch2==2:
     ch4 = int(input ('Enter your choice: '))
     if ch4>0 and ch4<=(len(unit_list)):
         if ch4==1:
-            to_unit=micr_m
+            to_unit=microgram
         elif ch4==2:
-            to_unit=mill_m
+            to_unit=milligram
         elif ch4==3:
-            to_unit=gram_m
+            to_unit=gram
         elif ch4==4:
-            to_unit=kilo_m
+            to_unit=kilogram
         elif ch4==5:
-            to_unit=metr_m
+            to_unit=metric_ton
         elif ch4==6:
-            to_unit=tonn_m
+            to_unit=tonne
         elif ch4==7:
-            to_unit=poun_m
+            to_unit=pound
         elif ch4==8:
-            to_unit=ounc_m
+            to_unit=ounce
         elif ch4==9:
-            to_unit=cara_m
+            to_unit=carat
         elif ch4==10:
-            to_unit=atom_m
+            to_unit=a_m_u
+    else:
+        print ('Please choose only from provided options.')
+elif ch2==4: #if the user enters 4. Volume as standard for unit conversion
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
+    print ('From which unit?: ')
+    unit_list = list_volume
+    for i in range (len(unit_list)):
+        print (i+1, '. ', unit_list[i], sep = '')
+    ch3 = int(input ('Enter your choice: '))
+    cubic_metre = 10**0
+    cubic_decimetre = 10**-3
+    cubic_centimetre = 10**-6
+    cubic_foot = 28.316 * (10**-3)
+    cubic_inch = 16.387 * (10**-6)
+    pint = 0.568261 * (10**-3)
+    gallon = 4.546 * (10**-3)
+    barrel = 0.15989
+    if ch3>0 and ch3<=(len(unit_list)):
+        if ch3==1:
+            from_unit=cubic_metre
+        elif ch3==2:
+            from_unit=cubic_decimetre
+        elif ch3==3:
+            from_unit=cubic_centimetre
+        elif ch3==4:
+            from_unit=cubic_foot
+        elif ch3==5:
+            from_unit=cubic_inch
+        elif ch3==6:
+            from_unit=pint
+        elif ch3==7:
+            from_unit=gallon
+        elif ch3==8:
+            from_unit=barrel
+    else:
+        print ('Please choose only from provided options.')
+    print ('-----------------------------------------------------')
+    try:
+        os. system('CLS')
+    except:
+        pass
+    print ('To which unit?: ')
+    for i in range (len(unit_list)):
+        print (i+1, '. ', unit_list[i], sep = '')
+    ch4 = int(input ('Enter your choice: '))
+    if ch4>0 and ch4<=(len(unit_list)):
+        if ch4==1:
+            to_unit=cubic_metre
+        elif ch4==2:
+            to_unit=cubic_decimetre
+        elif ch4==3:
+            to_unit=cubic_centimetre
+        elif ch4==4:
+            to_unit=cubic_foot
+        elif ch4==5:
+            to_unit=cubic_inch
+        elif ch4==6:
+            to_unit=pint
+        elif ch4==7:
+            to_unit=gallon
+        elif ch4==8:
+            to_unit=barrel
     else:
         print ('Please choose only from provided options.')
 try:
     os. system('CLS')
 except:
     pass
-if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)):
+if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)): # To display all data obtained from the user
     input_val = float(input('Enter value to be converted: '))
     print ('-----------------------------------------------------')
     print ('From:', unit_list[ch3-1])
     print ('To:', unit_list[ch4-1])
-    output_val = (input_val*from_unit)/to_unit
+    output_val = round(((input_val*from_unit)/to_unit),4)
     print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
     print ('-----------------------------------------------------')
