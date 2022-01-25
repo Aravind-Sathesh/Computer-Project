@@ -13,6 +13,16 @@ def clear():
     except:
         print ('-----------------------------------------------------')
 
+def output():
+    clear()
+    input_val = float(input('Enter value to be converted: '))
+    print ('-----------------------------------------------------')
+    print ('From:', unit_list[ch3-1])
+    print ('To:', unit_list[ch4-1])
+    output_val = ((input_val*from_unit)/to_unit)
+    print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
+    print ('-----------------------------------------------------')
+
 clear()
 ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
 # Storing the possible initial standards and units for conversion in lists:
@@ -20,7 +30,7 @@ main_list = ['Length','Mass','Temperature','Volume','Storage','Energy']
 list_length = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
 list_mass = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
 list_temp = ['Celsius','Fahrenheit','Kelvin']
-list_volume = ['Cubic metre','Cubic decimetre','Cubic centrimetre','Cubic foot','Cubic inch','Pint','Gallon','Barrel']
+list_volume = ['Cubic metre','Litre','Cubic centrimetre','Cubic foot','Cubic inch','Pint','Gallon','Barrel']
 list_storage = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
 list_energy = ['Erg','Joule','Kilojoule','Megajoule','Gigajoule','Calorie','Kilocalorie','Electron volt','Watt-hour','Kilowatt-hour','Foot-pound force','British Thermal Unit (BTU)','Barrel-of-oil equivalent','Therm']
 print ('Units convertor:')
@@ -141,6 +151,7 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
             to_unit=light_year
         elif ch4==19:
             to_unit=astro_unit
+        output()
     else:
         print ('Please choose only from provided options.')
 
@@ -160,7 +171,7 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
     pound = 453.59
     ounce = 28.349
     carat = 0.2
-    a_mu = 1.66 * (10**-24)
+    a_m_u = 1.66 * (10**-24)
 
     # Choosing the from_unit for the value entered by the user:
     if ch3>0 and ch3<=(len(unit_list)):
@@ -183,7 +194,7 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
         elif ch3==9:
             from_unit=carat
         elif ch3==10:
-            from_unit=a_mu
+            from_unit=a_m_u
     else:
         print ('Please choose only from provided options.')
     clear()
@@ -211,7 +222,8 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
         elif ch4==9:
             to_unit=carat
         elif ch4==10:
-            to_unit=a_mu
+            to_unit=a_m_u
+        output()
     else:
         print ('Please choose only from provided options.')
 
@@ -223,7 +235,7 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
 
     # Units in terms of standard unit (SI):
     cubic_metre = 10**0 # Standard unit (SI)
-    cubic_decimetre = 10**-3
+    litre = 10**-3
     cubic_centimetre = 10**-6
     cubic_foot = 28.316 * (10**-3)
     cubic_inch = 16.387 * (10**-6)
@@ -236,7 +248,7 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
         if ch3==1:
             from_unit=cubic_metre
         elif ch3==2:
-            from_unit=cubic_decimetre
+            from_unit=litre
         elif ch3==3:
             from_unit=cubic_centimetre
         elif ch3==4:
@@ -260,7 +272,7 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
         if ch4==1:
             to_unit=cubic_metre
         elif ch4==2:
-            to_unit=cubic_decimetre
+            to_unit=litre
         elif ch4==3:
             to_unit=cubic_centimetre
         elif ch4==4:
@@ -273,6 +285,7 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
             to_unit=gallon
         elif ch4==8:
             to_unit=barrel
+        output()
     else:
         print ('Please choose only from provided options.')
 
@@ -349,6 +362,7 @@ elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
             to_unit=zettabyte
         elif ch4==11:
             to_unit=yottabyte
+        output()
     else:
         print ('Please choose only from provided options.')
 
@@ -370,7 +384,7 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
     watt_hour = 3.6 * 10**3
     kilowatt_hour = 3.6 * 10**6
     foot_pound = 1.3558
-    b_tu = 1055.0559
+    b_t_u = 1055.0559
     barrel = 6117863199.99928
     therm = 105505600
 
@@ -399,7 +413,7 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
         elif ch3==11:
             from_unit=foot_pound
         elif ch3==12:
-            from_unit=b_tu
+            from_unit=b_t_u
         elif ch3==13:
             from_unit=barrel
         elif ch3==14:
@@ -435,19 +449,11 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
         elif ch4==11:
             to_unit=foot_pound
         elif ch4==12:
-            to_unit=b_tu
+            to_unit=b_t_u
         elif ch4==13:
             to_unit=barrel
         elif ch4==14:
             to_unit=therm
+        output()
     else:
         print ('Please choose only from provided options.')
-clear()
-if ch3>0 and ch4>0 and ch3<=(len(unit_list)) and ch4<=(len(unit_list)): # To display all data obtained from the user
-    input_val = float(input('Enter value to be converted: '))
-    print ('-----------------------------------------------------')
-    print ('From:', unit_list[ch3-1])
-    print ('To:', unit_list[ch4-1])
-    output_val = ((input_val*from_unit)/to_unit)
-    print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
-    print ('-----------------------------------------------------')
