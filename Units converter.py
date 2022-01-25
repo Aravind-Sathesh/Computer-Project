@@ -7,13 +7,7 @@ except:
         pass
 ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
 # Storing the possible standards and units for conversion in lists:
-main_list = ['Length','Mass','Temperature','Volume','Storage','Energy']
-list_length = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
-list_mass = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
-list_temp = ['Celsius','Fahrenheit','Kelvin']
-list_volume = ['Cubic metre','Cubic decimetre','Cubic centrimetre','Cubic foot','Cubic inch','Pint','Gallon','Barrel']
-list_storage = ['Bit','Nibble','Byte','Kilobyte','Megabyte','Gigabyte','Terabyte','Petabyte','Exabyte','Zettabyte','Yottabyte']
-list_energy = ['Joule','Erg','Calorie','Kilocalorie','']
+
 print ('Units convertor:')
 # Displaying the options of standards to choose from using a for loop to access elements of main_list
 print ('Choose the standard of units you want to convert: ')
