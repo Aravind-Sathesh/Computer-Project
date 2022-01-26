@@ -13,6 +13,7 @@ def clear():
     except:
         print ('-----------------------------------------------------')
 
+# Function to calculate and display relevant information based on the user's input
 def output():
     clear()
     input_val = float(input('Enter value to be converted: '))
@@ -66,7 +67,7 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
     astro_unit = 1496 * (10**8)
 
     # Choosing the from_unit for the value entered by the user:
-    if ch3>0 and ch3<=(len(unit_list)):
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
             from_unit=picometre
         elif ch3==2:
@@ -106,13 +107,13 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
         elif ch3==19:
             from_unit=astro_unit
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
     clear()
     print ('To which unit?: ')
     ch4 = choose (unit_list)
 
     # Storing the to_unit as the unit to convert the user's value to:
-    if ch4>0 and ch4<=(len(unit_list)):
+    if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
             to_unit=picometre
         elif ch4==2:
@@ -153,7 +154,7 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
             to_unit=astro_unit
         output()
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
 
 elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
     clear()
@@ -174,7 +175,7 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
     a_m_u = 1.66 * (10**-24)
 
     # Choosing the from_unit for the value entered by the user:
-    if ch3>0 and ch3<=(len(unit_list)):
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
             from_unit=microgram
         elif ch3==2:
@@ -196,13 +197,13 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
         elif ch3==10:
             from_unit=a_m_u
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
     clear()
     print ('To which unit?: ')
     ch4 = choose (unit_list)
     
     # Storing the to_unit as the unit to convert the user's value to:
-    if ch4>0 and ch4<=(len(unit_list)):
+    if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
             to_unit=microgram
         elif ch4==2:
@@ -225,7 +226,7 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
             to_unit=a_m_u
         output()
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
 
 elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
     clear()
@@ -244,7 +245,7 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
     barrel = 0.15989
 
     # Choosing the from_unit for the value entered by the user:
-    if ch3>0 and ch3<=(len(unit_list)):
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
             from_unit=cubic_metre
         elif ch3==2:
@@ -262,13 +263,13 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
         elif ch3==8:
             from_unit=barrel
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
     clear()
     print ('To which unit?: ')
     ch4 = choose (unit_list)
 
     # Storing the to_unit as the unit to convert the user's value to:
-    if ch4>0 and ch4<=(len(unit_list)):
+    if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
             to_unit=cubic_metre
         elif ch4==2:
@@ -287,7 +288,71 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
             to_unit=barrel
         output()
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
+    
+elif ch2==3: # If the user enters 3. Temperature as standard for unit conversion
+    clear()
+    print ('From which unit?: ')
+    unit_list = list_temp
+    ch3 = choose (unit_list)
+    
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits 
+        print ('-----------------------------------------------------')
+        print ('To which unit?: ')
+        ch4 = choose (unit_list)
+
+        if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
+            if ch3==1: 
+                from_unit = 'Celsius'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = input_val
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = ((input_val*9)/5)+32
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = input_val+273.15
+
+            elif ch3==2:
+                from_unit = 'Fahrenheit'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = ((input_val*5)/9)-32
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = input_val
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = ((input_val*5)/9)+241.15
+
+            elif ch3==3:
+                from_unit = 'Kelvin'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = input_val-273.15
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = ((input_val*9)/5)-459.67
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = input_val
+            
+            # To display relevant information
+            print ('-----------------------------------------------------')
+            print ('From:', from_unit)
+            print ('To:', to_unit)
+            print (input_val, from_unit.lower(), 'is', output_val, to_unit.lower(), end='.\n')
+            print ('-----------------------------------------------------')
+        else:
+            print ('Please choose only from provided options.') # If the value is outside list limits
+    else:
+        print ('Please choose only from provided options.') # If the value is outside list limits
+
+    
 
 elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
     clear()
@@ -309,7 +374,7 @@ elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
     yottabyte = zettabyte*1024
 
     # Choosing the from_unit for the value entered by the user:
-    if ch3>0 and ch3<=(len(unit_list)):
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
             from_unit=bit
         elif ch3==2:
@@ -333,13 +398,13 @@ elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
         elif ch3==11:
             from_unit=yottabyte
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
     clear()
     print ('To which unit?: ')
     ch4 = choose (unit_list)
 
     # Storing the to_unit as the unit to convert the user's value to:
-    if ch4>0 and ch4<=(len(unit_list)):
+    if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
             to_unit=bit
         elif ch4==2:
@@ -364,7 +429,7 @@ elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
             to_unit=yottabyte
         output()
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
 
 elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
     clear()
@@ -389,7 +454,7 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
     therm = 105505600
 
     # Choosing the from_unit for the value entered by the user:
-    if ch3>0 and ch3<=(len(unit_list)):
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
             from_unit=erg
         elif ch3==2:
@@ -419,13 +484,13 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
         elif ch3==14:
             from_unit=therm
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
     clear()
     print ('To which unit?: ')
     ch4 = choose (unit_list)
 
     # Storing the to_unit as the unit to convert the user's value to:
-    if ch4>0 and ch4<=(len(unit_list)):
+    if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
             to_unit=erg
         elif ch4==2:
@@ -456,4 +521,4 @@ elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
             to_unit=therm
         output()
     else:
-        print ('Please choose only from provided options.')
+        print ('Please choose only from provided options.') # If the value is outside list limits
