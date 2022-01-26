@@ -16,16 +16,16 @@ def calculator(flag):
 1) An Expression
 2) An Equation
 
-Enter choice 1 or 2 :'''))
+Enter your choice 1 or 2 : '''))
     print(choice )
 
 
     if choice == 1:
-        print('You have chosen An Expression : ')
+        print('You have chosen An Expression')
     elif choice == 2:
         print('You have chosen An Equation')
     else:
-        print('Invalid Choice ')
+        print('Invalid Choice')
         calculator(flag)
     if flag != 'console':
         print('\n     res = '+ str(flag))
@@ -33,10 +33,10 @@ Enter choice 1 or 2 :'''))
     var = ''
 
     if choice == 2:
-        var = input('enter the variable to be solved : ')
-        exp = str(input(('enter equation in one variable = 0 [Note "I" may be taken as sqrt(-1)]: ')))
+        var = input('Enter the variable to be solved: ')
+        exp = str(input(('Enter equation in one variable = 0 [Note "I" may be taken as sqrt(-1)]: ')))
     else:
-        exp = str(input('enter expression to be solved : '))
+        exp = str(input('Enter expression to be solved: '))
     print('')
     if ('res' in exp):
         # replace res with its actual value in expression
@@ -51,7 +51,7 @@ Enter choice 1 or 2 :'''))
         if choice == 2:
 
             x= symbols(var)
-            print("equation : {} = 0".format(exp))
+            print("equation: {} = 0".format(exp))
             roots = solve(exp, x)
             print('roots : ')
 
@@ -66,14 +66,14 @@ Enter choice 1 or 2 :'''))
             if len(roots) != 0:
                 result = str(eval(str(roots[0])))
             else:
-                print('Either no roots exist , or equation cannot be handled by SymPy')
+                print('Either no roots exist, or equation cannot be handled by SymPy')
                 result = '0.0'
 
         else:
-            print('expression = ' + exp)
+            print('Expression = ' + exp)
 
             result = str(eval(exp))
-            print('result : ' + result)
+            print('Result: ' + result)
 
         ans = input('\nSend output to calculator ? [yes/no] : ').lower()
 
@@ -101,10 +101,10 @@ Enter choice 1 or 2 :'''))
 
 
             else:
-                print('Thank you ! Exiting ...')
+                print('Thank you! Exiting ...')
 ##
     except:
-        print('\nerror in expression...\ntry again ')
+        print('\nError in expression...\nTry again ')
         calculator(eval(flag))
 
 
