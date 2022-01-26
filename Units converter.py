@@ -28,7 +28,7 @@ clear()
 ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
 # Storing the possible initial standards and units for conversion in lists:
 main_list = ['Length','Mass','Temperature','Volume','Storage','Energy']
-list_length = ['Picometre', 'Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Decametre','Hectometre','Kilometre','Megametre','Gigametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
+list_length = ['Angstrom', 'Nanometre', 'Micrometre','Millimetre','Centimetre','Decimetre','Metre','Kilometre','Megametre','Foot','Yard','Inch','Parsec','Light-year','Astronomical Unit']
 list_mass = ['Microgram','Milligram','Gram','Kilogram','Metric ton','Tonne','Pound','Ounce','Carat','Atomic Mass Unit']
 list_temp = ['Celsius','Fahrenheit','Kelvin']
 list_volume = ['Cubic metre','Litre','Cubic centrimetre','Cubic foot','Cubic inch','Pint','Gallon','Barrel']
@@ -45,6 +45,7 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
     print ('From which unit?: ')
     unit_list = list_length
     ch3 = choose(unit_list)
+
     # Units in terms of standard unit (SI):
     picometre = 10**-12
     angstrom = 10**-10
@@ -69,42 +70,34 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
     # Choosing the from_unit for the value entered by the user:
     if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits
         if ch3==1:
-            from_unit=picometre
-        elif ch3==2:
             from_unit=angstrom
-        elif ch3==3:
+        elif ch3==2:
             from_unit=nanometre
-        elif ch3==4:
+        elif ch3==3:
             from_unit=micrometre
-        elif ch3==5:
+        elif ch3==4:
             from_unit=millimetre
-        elif ch3==6:
+        elif ch3==5:
             from_unit=centimetre
-        elif ch3==7:
+        elif ch3==6:
             from_unit=decimetre
-        elif ch3==8:
+        elif ch3==7:
             from_unit=metre
-        elif ch3==9:
-            from_unit=decametre
-        elif ch3==10:
-            from_unit=hectometre
-        elif ch3==11:
+        elif ch3==8:
             from_unit=kilometre
-        elif ch3==12:
+        elif ch3==9:
             from_unit=megametre
-        elif ch3==13:
-            from_unit=gigametre
-        elif ch3==14:
+        elif ch3==10:
             from_unit=foot
-        elif ch3==15:
+        elif ch3==11:
             from_unit=yard
-        elif ch3==16:
+        elif ch3==12:
             from_unit=inch
-        elif ch3==17:
+        elif ch3==13:
             from_unit=parsec
-        elif ch3==18:
+        elif ch3==14:
             from_unit=light_year
-        elif ch3==19:
+        elif ch3==15:
             from_unit=astro_unit
     else:
         print ('Please choose only from provided options.') # If the value is outside list limits
@@ -115,42 +108,34 @@ if ch2==1: # If the user enters 1. Length as standard for unit conversion
     # Storing the to_unit as the unit to convert the user's value to:
     if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
         if ch4==1:
-            to_unit=picometre
-        elif ch4==2:
             to_unit=angstrom
-        elif ch4==3:
+        elif ch4==2:
             to_unit=nanometre
-        elif ch4==4:
+        elif ch4==3:
             to_unit=micrometre
-        elif ch4==5:
+        elif ch4==4:
             to_unit=millimetre
-        elif ch4==6:
+        elif ch4==5:
             to_unit=centimetre
-        elif ch4==7:
+        elif ch4==6:
             to_unit=decimetre
-        elif ch4==8:
+        elif ch4==7:
             to_unit=metre
-        elif ch4==9:
-            to_unit=decametre
-        elif ch4==10:
-            to_unit=hectometre
-        elif ch4==11:
+        elif ch4==8:
             to_unit=kilometre
-        elif ch4==12:
+        elif ch4==9:
             to_unit=megametre
-        elif ch4==13:
-            to_unit=gigametre
-        elif ch4==14:
+        elif ch4==10:
             to_unit=foot
-        elif ch4==15:
+        elif ch4==11:
             to_unit=yard
-        elif ch4==16:
+        elif ch4==12:
             to_unit=inch
-        elif ch4==17:
+        elif ch4==13:
             to_unit=parsec
-        elif ch4==18:
+        elif ch4==14:
             to_unit=light_year
-        elif ch4==19:
+        elif ch4==15:
             to_unit=astro_unit
         output()
     else:
@@ -228,6 +213,69 @@ elif ch2==2: # If the user enters 2. Mass as standard for unit conversion
     else:
         print ('Please choose only from provided options.') # If the value is outside list limits
 
+elif ch2==3: # If the user enters 3. Temperature as standard for unit conversion
+    clear()
+    print ('From which unit?: ')
+    unit_list = list_temp
+    ch3 = choose (unit_list)
+    clear()
+
+    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits 
+        print ('To which unit?: ')
+        ch4 = choose (unit_list)
+        clear()
+        
+        if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
+            if ch3==1: 
+                from_unit = 'Celsius'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = input_val
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = ((input_val*9)/5)+32
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = input_val+273.15
+
+            elif ch3==2:
+                from_unit = 'Fahrenheit'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = ((input_val*5)/9)-32
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = input_val
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = ((input_val*5)/9)+241.15
+
+            elif ch3==3:
+                from_unit = 'Kelvin'
+                input_val = float(input('Enter value to be converted: '))
+                if ch4==1:
+                    to_unit = 'Celsius'
+                    output_val = input_val-273.15
+                elif ch4==2:
+                    to_unit = 'Fahrenheit'
+                    output_val = ((input_val*9)/5)-459.67
+                elif ch4==3:
+                    to_unit = 'Kelvin'
+                    output_val = input_val
+            
+            # To display relevant information
+            print ('-----------------------------------------------------')
+            print ('From:', from_unit)
+            print ('To:', to_unit)
+            print (input_val, from_unit.lower(), 'is', output_val, to_unit.lower(), end='.\n')
+            print ('-----------------------------------------------------')
+        else:
+            print ('Please choose only from provided options.') # If the value is outside list limits
+    else:
+        print ('Please choose only from provided options.') # If the value is outside list limits
+
 elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
     clear()
     print ('From which unit?: ')
@@ -290,70 +338,6 @@ elif ch2==4: # If the user enters 4. Volume as standard for unit conversion
     else:
         print ('Please choose only from provided options.') # If the value is outside list limits
     
-elif ch2==3: # If the user enters 3. Temperature as standard for unit conversion
-    clear()
-    print ('From which unit?: ')
-    unit_list = list_temp
-    ch3 = choose (unit_list)
-    
-    if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits 
-        print ('-----------------------------------------------------')
-        print ('To which unit?: ')
-        ch4 = choose (unit_list)
-
-        if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
-            if ch3==1: 
-                from_unit = 'Celsius'
-                input_val = float(input('Enter value to be converted: '))
-                if ch4==1:
-                    to_unit = 'Celsius'
-                    output_val = input_val
-                elif ch4==2:
-                    to_unit = 'Fahrenheit'
-                    output_val = ((input_val*9)/5)+32
-                elif ch4==3:
-                    to_unit = 'Kelvin'
-                    output_val = input_val+273.15
-
-            elif ch3==2:
-                from_unit = 'Fahrenheit'
-                input_val = float(input('Enter value to be converted: '))
-                if ch4==1:
-                    to_unit = 'Celsius'
-                    output_val = ((input_val*5)/9)-32
-                elif ch4==2:
-                    to_unit = 'Fahrenheit'
-                    output_val = input_val
-                elif ch4==3:
-                    to_unit = 'Kelvin'
-                    output_val = ((input_val*5)/9)+241.15
-
-            elif ch3==3:
-                from_unit = 'Kelvin'
-                input_val = float(input('Enter value to be converted: '))
-                if ch4==1:
-                    to_unit = 'Celsius'
-                    output_val = input_val-273.15
-                elif ch4==2:
-                    to_unit = 'Fahrenheit'
-                    output_val = ((input_val*9)/5)-459.67
-                elif ch4==3:
-                    to_unit = 'Kelvin'
-                    output_val = input_val
-            
-            # To display relevant information
-            print ('-----------------------------------------------------')
-            print ('From:', from_unit)
-            print ('To:', to_unit)
-            print (input_val, from_unit.lower(), 'is', output_val, to_unit.lower(), end='.\n')
-            print ('-----------------------------------------------------')
-        else:
-            print ('Please choose only from provided options.') # If the value is outside list limits
-    else:
-        print ('Please choose only from provided options.') # If the value is outside list limits
-
-    
-
 elif ch2==5: # If the user enters 5. Storage as standard for unit conversion
     clear()
     print ('From which unit?: ')
