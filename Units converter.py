@@ -1,14 +1,9 @@
 def convertor(flag):
     import os # Importing the package for system clearscreen function
 
-    # Function to accept the choice of the user:
-    def choose (unit_list):
-        for i in range (len(unit_list)):
-            print (i+1, '. ', unit_list[i], sep = '')
-        return (int(input ('Enter your choice: ')))
 
     # Function to accept the choice of the user:
-    def choose1 (unit_list):
+    def choose(unit_list):
         j=1
         for i in unit_list:
             print (j, '. ', i, sep = '')
@@ -34,11 +29,11 @@ def convertor(flag):
     def compute(unit_dict):
         clear()
         print('Choose the unit to convert from: [1-',len(unit_dict),']', sep = '')
-        ch3 = choose1(unit_dict)
+        ch3 = choose(unit_dict)
         if 0<ch3<=len(unit_dict):
             clear()
             print('Choose the unit to convert to: [1-',len(unit_dict),']', sep = '')
-            ch4 = choose1(unit_dict)
+            ch4 = choose(unit_dict)
             if 0<ch4<=len(unit_dict):
                 clear()
                 unit_list = list(unit_dict)
