@@ -25,9 +25,9 @@ def convertor(flag):
     # Function to be executed if user enters a choice outide valid limits
     def else_block():
         print ('Please choose only from provided options.')
-        if input('Do you want to try again? [yes/no]:')=='yes':
+        if input('Do you want to try again? [yes/no]: ')=='yes':
             convertor('')
-        elif input('Send output to calculator? [yes/no]:')=='no':
+        elif input('Do you want to try again? [yes/no]: ')=='no':
             print ('Thank you! Exiting ...')
 
     # Function to calculate and display relevant information based on the user's input
@@ -39,7 +39,7 @@ def convertor(flag):
             clear()
             print('Choose the unit to convert to: [1-',len(unit_dict),']', sep = '')
             ch4 = choose1(unit_dict)
-            if 0<ch3<=len(unit_dict):
+            if 0<ch4<=len(unit_dict):
                 clear()
                 unit_list = list(unit_dict)
                 from_unit = unit_dict[list(unit_dict)[ch3-1]]
@@ -53,13 +53,14 @@ def convertor(flag):
                 output_val = round(((input_val*from_unit)/to_unit),8)
                 print (input_val, unit_list[ch3-1].lower(), 'is', output_val, unit_list[ch4-1].lower(), end='.\n')
                 print ('-----------------------------------------------------')
-                ch5 = input('Send output to convertor? [yes/no]:')
-                if input('Send output to convertor? [yes/no]:')=='yes':
+                ch5 = input('Send output to convertor? [yes/no]: ')
+                if ch5 =='yes':
                     convertor(output_val)
-                elif input('Send output to convertor? [yes/no]:')=='no':
-                    if input('Send output to calculator? [yes/no]:')=='yes':               
+                elif ch5 =='no':
+                    ch6 = input('Send output to calculator? [yes/no]: ')
+                    if ch6 =='yes':               
                         pass
-                    elif input('Send output to calculator? [yes/no]:')=='no':
+                    elif ch6 =='no':
                         print ('Thank you! Exiting ...')
                     else:
                         else_block()
@@ -70,13 +71,11 @@ def convertor(flag):
         else:
             else_block()
 
-
-
-
     clear()
+    print ('Units convertor:')
     ch2 = ch3 = ch4 = -1 # Defining initial value for choice variables
-
     main_dict = {1:'Length', 2:'Mass', 3:'Temperature', 4:'Volume', 5:'Storage',6: 'Energy'}
+
     # Following dictionaries store the name of the unit as the key and the product for conversion to base unit as the value:
     length_dict = {'Angstrom':10**-10, 'Nanometre':10**-9, 'Micrometre':10**-6,'Millimetre':10**-3,'Centimetre':10**-2,'Decimetre':10**-1,'Metre':1,'Kilometre':10**3,'Megametre':10**6,'Foot':0.3048,'Yard':0.9144,'Inch':0.0254,'Parsec':30857*10**12,'Light-year':946*10**13,'Astronomical Unit':1496*10**8}
     mass_dict = {'Microgram':10**-6,'Milligram':10**-3,'Gram':1,'Kilogram':10**3,'Metric ton':10**6,'Tonne':1.016*10**6,'Pound':453.59,'Ounce':28.349,'Carat':0.2,'Atomic Mass Unit':1.66*10**-24}
@@ -85,8 +84,6 @@ def convertor(flag):
     storage_dict = {'Bit':0.125,'Nibble':0.5,'Byte':1,'Kilobyte':1024,'Megabyte':1024**2,'Gigabyte':1024**3,'Terabyte':1024**4,'Petabyte':1024**5,'Exabyte':1024**6,'Zettabyte':1024**7,'Yottabyte':1024**8}
     energy_dict = {'Erg':10**-7,'Joule':1,'Kilojoule':10**3,'Megajoule':10**6,'Gigajoule':10**9,'Calorie':4.184,'Kilocalorie':4184,'Electron volt':1.6022*10**-19,'Watt-hour':3.6*10**3,'Kilowatt-hour':3.6*10**6,'Foot-pound force':1.3558,'British Thermal Unit (BTU)':1055.0559,'Barrel-of-oil equivalent':6117863199.99928,'Therm':105505590}
     
-    print ('Units convertor:')
-
     # Displaying the options of standards to choose from using a for loop to access elements of main_list:
     print ('Choose the standard of units you want to convert: [1-6]')
     for i in main_dict:
@@ -102,16 +99,19 @@ def convertor(flag):
     elif ch2==3:
         clear()
         print ('From which unit?: ')
-        unit_list = temp_list
-        ch3 = choose (unit_list)
+        for i in range (len(temp_list)):
+            print (i+1, '. ', temp_list[i], sep = '')
+        ch3 = (int(input ('Enter your choice: ')))
         clear()
 
-        if ch3>0 and ch3<=(len(unit_list)): # To check if the value is within list limits 
+        if 0<ch3<=(len(temp_list)): # To check if the value is within list limits 
             print ('To which unit?: ')
-            ch4 = choose (unit_list)
+            for i in range (len(temp_list)):
+                print (i+1, '. ', temp_list[i], sep = '')
+            ch4 = (int(input ('Enter your choice: ')))
             clear()
             
-            if ch4>0 and ch4<=(len(unit_list)): # To check if the value is within list limits
+            if 0<ch4<=(len(temp_list)): # To check if the value is within list limits
                 if ch3==1: 
                     from_unit = 'Celsius'
                     input_val = float(input('Enter value to be converted: '))
@@ -156,13 +156,15 @@ def convertor(flag):
                 print (input_val, from_unit.lower(), 'is', output_val, to_unit.lower(), end='.\n')
                 print ('-----------------------------------------------------')
             else:
-                print ('Please choose only from provided options.') # If the value is outside list limits
+                else_block()
         else:
-            print ('Please choose only from provided options.') # If the value is outside list limits
+            else_block()
     elif ch2==4:
         compute(volume_dict)
     elif ch2==5:
         compute(storage_dict)
     elif ch2==6: # If the user enters 6. Energy as standard for unit conversion
         compute(energy_dict)
+    else:
+        else_block()
 convertor('')
