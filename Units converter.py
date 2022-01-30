@@ -47,6 +47,7 @@ def convertor(flag):
                     input_val = float(input('Enter value to be converted: '))
                 else:
                     input_val = flag
+                    print('Value to be converted:', input_val)
                 output_val = round(((input_val*from_unit)/to_unit), 8)
                 print(input_val, unit_list[ch3-1].lower(), 'is',
                       output_val, unit_list[ch4-1].lower(), end='.\n')
